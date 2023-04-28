@@ -43,7 +43,7 @@ const Cast = () => {
                 width="154"
                 height="175"
               />
-              <CastName>{name ? `Character: ${name}` : ''}</CastName>
+              <CastName>{name ? name : ''}</CastName>
               <Hero>{character ? `Character: ${character}` : ''}</Hero>
             </CastCard>
           ))}
