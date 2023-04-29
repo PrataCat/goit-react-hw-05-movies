@@ -54,7 +54,7 @@ const Movies = () => {
     <section>
       <SearchBar changeKeyWord={changeKeyWord} />
       <Container>
-        {moviesArr && (
+        {moviesArr.length !== 0 && (
           <MovieList
             movies={moviesArr}
             pageTitle={`Found movies with "${keyWord}"`}

@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SharedLayout = lazy(() => import('../SharedLayout'));
@@ -12,17 +13,20 @@ const NotFound = lazy(() => import('../../pages/NotFound'));
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Home />} />
-        <Route path="movies" element={<Movies />} />
-        <Route path="movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-          <Route path="*" element={<NotFound />} />
+    <>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+          <Route path="movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
+      <ToastContainer />
+    </>
   );
 };
 
