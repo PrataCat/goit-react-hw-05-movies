@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 const KEY_MOVIES = 'movies';
@@ -25,6 +26,13 @@ const useLocalStorageKeyword = defaultValue => {
   }, [data]);
 
   return [data, setData];
+};
+
+useLocalStorageMovies.propTypes = {
+  defaultValue: PropTypes.array,
+};
+useLocalStorageKeyword.propTypes = {
+  defaultValue: PropTypes.string,
 };
 
 export { useLocalStorageMovies, useLocalStorageKeyword };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
 import {
@@ -47,6 +48,10 @@ const SearchBar = ({ changeKeyWord }) => {
       </SearchForm>
     </SearchbarWrap>
   );
+};
+
+SearchBar.propTypes = {
+  changeKeyWord: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

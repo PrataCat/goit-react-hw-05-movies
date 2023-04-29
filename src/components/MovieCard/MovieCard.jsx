@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Poster, Title } from './MovieCard.styled';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -29,6 +30,12 @@ const MovieCard = ({ movieId, posterImg, title }) => {
       </li>
     </section>
   );
+};
+
+MovieCard.propTypes = {
+  movieId: PropTypes.number.isRequired,
+  posterImg: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 export default MovieCard;

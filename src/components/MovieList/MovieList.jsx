@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import MovieCard from 'components/MovieCard/MovieCard';
 import { TopMovies } from './MovieList.styled';
 
@@ -20,6 +21,11 @@ const MovieList = ({ movies, pageTitle }) => {
       </TopMovies>
     </section>
   );
+};
+
+MovieCard.propTypes = {
+  movies: PropTypes.array,
+  pageTitle: PropTypes.string,
 };
 
 export default MovieList;
